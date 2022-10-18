@@ -1,0 +1,47 @@
+#############################
+# Virtual Code Environments
+#############################
+# Create a virtual environment for each project you work on.
+# conda create -n Project_A_Env python=3.9
+
+# conda env create -f environment.yml
+
+# List of all conda environments
+# conda env list
+
+# To read the environment.yml file
+# 1) Export it from conda
+# conda env export > environment.yml
+
+# Example "environment.yml" file
+# name: myenv
+# channels:
+#   - conda-forge
+# dependencies:
+#   - python=3.8
+#   - pandas
+#   - jupyter
+#   - pip:
+#     - skimpy
+
+
+# 2) Read it on Python
+# from rich import print
+
+# with open("environment.yml", 'r') as stream:
+#     data_loaded = stream.read()
+# print(data_loaded)
+
+#With the relevant environment activated, you can install packages as you go too! 
+# use conda install packagename
+
+# To remove an environment
+# conda remove -n Project_A_Env --all
+
+
+# conda create -n Kolonialzeitung python=3.9
+# To activate this environment, use
+#     $ conda activate Kolonialzeitung
+# To deactivate an active environment, use
+#     $ conda deactivate
+# Path: /opt/anaconda3/envs/Kolonialzeitung

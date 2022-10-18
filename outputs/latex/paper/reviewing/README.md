@@ -1,0 +1,1 @@
+Borrowed from Jonathan Dingel: https://github.com/jdingel/projecttemplate
