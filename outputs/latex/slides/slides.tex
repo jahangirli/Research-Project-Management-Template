@@ -11,17 +11,12 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{afterpage}
-\definecolor{dGreen}{rgb}{0.0, 0.5, 0.0}
-
-
-% ------ % Set Beamer Style
-\useoutertheme{shadow}
-\setbeamercolor{background canvas}{bg=white}
-\setbeamercolor{title}{bg=dGreen!10,fg=black}
-\setbeamercolor{frametitle}{fg=black,bg=dGreen!10}
-%\setbeamercolor{subitem}{fg=dGreen} %make subitem or item colored differently
-\setbeamersize{text margin left=5mm,text margin right=5mm} 
 \usepackage{hyperref}
+% ------ % Set citation style
+\usepackage{apacite}
+\usepackage{natbib}
+
+\useoutertheme{shadow}
 \hypersetup{
 	pdftex,
 	%pdftitle={My Project}, % project title
@@ -31,11 +26,23 @@
 	citecolor=brown,        % color of links to bibliography
 	urlcolor=blue           % color of external links
 }
-\floatsetup[table]{capposition=top}
-\floatsetup[figure]{capposition=top}
+
 \usepackage{xcolor}
 \usepackage[width=1\textwidth,font={small, sf,it},labelfont={color=dGreen,bf, sf},
 labelsep=colon, format=plain]{caption}
+
+% ------ % Set Table and Figure Caption Position
+\floatsetup[table]{capposition=top}
+\floatsetup[figure]{capposition=top}
+
+% ------ % Set Beamer Style
+
+\definecolor{dGreen}{rgb}{0.0, 0.5, 0.0}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{title}{bg=dGreen!10,fg=black}
+\setbeamercolor{frametitle}{fg=black,bg=dGreen!10}
+%\setbeamercolor{subitem}{fg=dGreen} %make subitem or item colored differently
+\setbeamersize{text margin left=5mm,text margin right=5mm} 
 
 % ------ % Navigation bar (adding page numbers)
 \setbeamertemplate{navigation symbols}{
@@ -46,15 +53,12 @@ labelsep=colon, format=plain]{caption}
 \fi%
 }
 \setbeamertemplate{footline} % remove footline (project name, etc)
-
-% ------ % Set citation style
-\usepackage{apacite}
-\usepackage{natbib}
 \makeatletter
 \DeclareRobustCommand\citep
 {\begingroup\small\NAT@swatrue\let\NAT@ctype\z@\NAT@partrue
 	\@ifstar{\NAT@fulltrue\NAT@citetp}{\NAT@fullfalse\NAT@citetp}}
 \makeatother
+
 
 % ------ % Setting the graphicspath
 \graphicspath{{../../}} 
