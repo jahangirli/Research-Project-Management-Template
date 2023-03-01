@@ -2,6 +2,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage{blindtext,changepage,caption,subcaption,graphicx,booktabs,pgfplots,multirow,appendix,mathtools,fancyhdr,pst-plot,floatrow,amsmath,cases,apacite,natbib,caption,tikz,rotating,subcaption,lmodern,graphicx,outlines,amsmath,amsfonts,amssymb,subcaption,mwe, hyperref,sectsty, afterpage}
 \usepackage[en-US]{datetime2}
+\usepackage{./NJpaper} % my styling file
+
 % ------ % Setting style
 \hypersetup{
 	pdftex,
@@ -11,67 +13,6 @@
 	citecolor=black,        % color of links to bibliography
 	urlcolor=blue           % color of external links
 }
-\sectionfont{\fontsize{16}{0}\selectfont}
-\newcommand\blankpage{%
-	\null
-	\thispagestyle{empty}%
-	\addtocounter{page}{-1}%
-	\newpage}
-\definecolor{ChadGreen}{rgb}{0,.4,0}    % Dark Green
-\definecolor{ChadBlue}{rgb}{.1,.1,.5}  
-\newcommand{\runningheads}[2]{
-	\chead[\color{ChadGreen}{\uppercase {\footnotesize #1}}]  % Author page header
-	{\color{ChadGreen}{\uppercase {\footnotesize #2}}}  % Short title
-} 
-
-\usepackage{xcolor}
-\usepackage[width=1\textwidth,font={small, sf},labelfont={color=ChadBlue,bf, sf},
-labelsep=colon, format=plain]{caption}
-
-\makeatother
-\floatsetup[table]{capposition=top}
-\floatsetup[figure]{capposition=top}
-\usepackage[left=2.5cm,right=2.5cm,top=3cm,bottom=3cm]{geometry}
-\usepackage{setspace}
-\doublespacing
-% This is how to control linespacing using setspace
-% (\singlespacing or doublespacing just call this command)
-%\setstretch{1.4}
-%% Setting up page headers
-\pagestyle{fancy}
-\rhead[]{\thepage}
-\lhead[\thepage]{}
-\cfoot[]{} 
-\renewcommand{\headrulewidth}{0pt}
-% Make hyperlinks jump more accurately
-\makeatletter
-\newcommand\org@hypertarget{}
-\let\org@hypertarget\hypertarget
-\renewcommand\hypertarget[2]{%
-	\Hy@raisedlink{\org@hypertarget{#1}{}}#2%
-} \makeatother 
-% Spacing in Tables and Figures
-%\renewcommand{\tabcolsep}{1pt}   % space between columns
-\renewcommand{\arraystretch}{1.5} % space between rows
-\addtolength{\textfloatsep}{0pt} % space between floats and text
-\addtolength{\abovecaptionskip}{0pt} % space above caption
-\addtolength{\belowcaptionskip}{.15in} % space below caption
-
-\let\LaTeXtitle\title
-\renewcommand{\title}[1]{\LaTeXtitle{\color{ChadBlue}{\LARGE #1}}}
-\renewcommand{\abstractname}{\color{ChadBlue}Abstract}
-% \renewcommand{\figurename}{\color{ChadBlue}Figure}
-% \renewcommand{\tablename}{\color{ChadBlue}Table}
-% Add a period *only* after Section and *only* in title, not cross ref
-% April 2017
-\makeatletter
-\renewcommand{\@seccntformat}[1]{%
-	\csname the#1\endcsname% Print sectional counter
-	\ifnum\pdfstrcmp{#1}{section}=0 .\fi% If \section, print .
-	\quad% Space between number and title
-}
-\makeatother
-
 % ------- % Setting the graphicspath
 \graphicspath{{../../}} 
 
